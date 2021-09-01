@@ -3,6 +3,13 @@
 const searchBook = () => {
     const searchField = document.getElementById('searchbox');
     const searchResults = searchField.value;
+    // display spinner
+    spinner('block');
+    toggleResult('none');
+    toggleNum('none');
+
+
+
 
     //clear previous search value
     searchField.value = '';
@@ -13,10 +20,21 @@ const searchBook = () => {
         .then(data => loadBook(data))
 }
 
+const spinner = displayStyle => {
+    document.getElementById('spinner').style.display = displayStyle;
+}
+const toggleResult = displayStyle => {
+    document.getElementById('searchResults').style.display = displayStyle;
+}
+const toggleNum = displayStyle => {
+    document.getElementById('itemsNumber').style.display = displayStyle;
+}
+
+
 // display data
 const loadBook = data => {
-    const itemsNumber = data.numFound;
 
+    const itemsNumber = data.numFound;
     const number = document.getElementById('itemsNumber');
 
     number.innerText = `Total items found = ${itemsNumber}`;
@@ -47,4 +65,8 @@ const loadBook = data => {
         results.appendChild(div);
 
     })
+    spinner('none');
+    toggleResult('block');
+    toggleNum('block');
+
 }

@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
 
+    <!--------------- style ----------------------->
 
     <style>
         .design {
@@ -23,11 +24,15 @@
         
         #searchResults :hover {
             color: white;
-            background-color: rgb(241, 61, 37);
+            background-color: rgb(112, 25, 25);
         }
         
         .design img {
             margin: 20px;
+        }
+        
+        #spinner {
+            display: none;
         }
     </style>
 </head>
@@ -43,7 +48,19 @@
     <div class="input-group mb-3 w-50 mx-auto">
         <input id="searchbox" type="text" class="form-control" placeholder="Search your favourite book" aria-label="Recipient's username" aria-describedby="button-addon2">
         <button onclick="searchBook()" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+
+
+
     </div>
+    <!-- <div id="spinner">Loading...</div> -->
+
+
+    <div class="d-flex justify-content-center">
+        <div id="spinner" class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
     <h4 id="itemsNumber">
 
     </h4>
