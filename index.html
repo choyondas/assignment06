@@ -40,35 +40,38 @@
 <body>
 
 
-    <h2 class="text-center py-4">Welcome to Book-Archive</h2>
+    <section class="w-50 mx-auto">
+        <h2 class="text-center py-4">Welcome to Book-Archive</h2>
 
-    <!--------------------------------------
-                input-field 
-    --------------------------------------->
-    <div class="input-group mb-3 w-50 mx-auto">
-        <input id="searchbox" type="text" class="form-control" placeholder="Search your favourite book" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button onclick="searchBook()" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-
-
-
-    </div>
-    <!-- <div id="spinner">Loading...</div> -->
+        <!--------------------------------------
+                    input-field 
+        --------------------------------------->
+        <div class="input-group mb-3 w-50 mx-auto">
+            <input id="searchbox" type="text" class="form-control" placeholder="Search your favourite book" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button onclick="searchBook()" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
 
 
-    <div class="d-flex justify-content-center">
-        <div id="spinner" class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
+
         </div>
-    </div>
 
-    <h4 id="itemsNumber">
 
-    </h4>
 
-    <h2 id="results"></h2>
-    <div id="searchResults">
+        <div class="d-flex justify-content-center">
+            <div id="spinner" class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
 
-    </div>
+        <h4 class="mx-4" id="itemsNumber">
+
+        </h4>
+
+        <h2 id="results"></h2>
+        <div id="searchResults">
+
+        </div>
+
+    </section>
 
 
     <!---------------------JavaScript Bundle file----------------------->
