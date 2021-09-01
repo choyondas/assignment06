@@ -50,7 +50,10 @@ const loadBook = data => {
 
     const searchResult = document.getElementById('results');
     searchResult.innerText = " ";
-    if (items.length == 0) {
+
+    // condition check for error message
+
+    if (items.length === 0) {
         searchResult.innerText = "no results found, please try again later!"
     }
 
