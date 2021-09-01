@@ -7,7 +7,7 @@ const searchBook = () => {
     //clear previous search value
     searchField.value = '';
 
-    const url = `http://openlibrary.org/search.json?q=${searchResults}`
+    const url = `https://openlibrary.org/search.json?q=${searchResults}`
     fetch(url)
         .then(res => res.json())
         .then(data => loadBook(data))
