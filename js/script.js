@@ -7,6 +7,7 @@ const searchBook = () => {
     spinner('block');
     toggleResult('none');
     toggleNum('none');
+    emptyResult('none');
 
 
 
@@ -28,6 +29,9 @@ const toggleResult = displayStyle => {
 }
 const toggleNum = displayStyle => {
     document.getElementById('itemsNumber').style.display = displayStyle;
+}
+const emptyResult = displayStyle => {
+    document.getElementById('results').style.display = displayStyle;
 }
 
 
@@ -68,5 +72,6 @@ const loadBook = data => {
     spinner('none');
     toggleResult('block');
     toggleNum('block');
+    emptyResult('block');
 
 }
