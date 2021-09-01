@@ -16,17 +16,19 @@ const loadBook = data => {
     const itemsNumber = data.numFound;
 
     const number = document.getElementById('itemsNumber');
-    number.innerText = `Total search items = ${itemsNumber}`;
-
-
-
+    number.innerText = `Total items found = ${itemsNumber}`;
     const items = data.docs;
+    const results = document.getElementById('searchResults');
+    results.textContent = ' ';
     items.forEach(bookItem => {
         // console.log(bookItem);
 
-        const results = document.getElementById('searchResults');
+
+
         const div = document.createElement('div');
-        div.classList.add('design')
+
+        div.classList.add('design');
+
         div.innerHTML = `
         <img width="100px" src="https://covers.openlibrary.org/b/id/${bookItem.cover_i}-L.jpg">
 <h2>${bookItem.title} </h2>
