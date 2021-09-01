@@ -63,7 +63,7 @@ const loadBook = data => {
             `
             <div><img width="100px" src="https://covers.openlibrary.org/b/id/${bookItem.cover_i}-L.jpg"></div>
             <div><h2>${bookItem.title} </h2>
-            <p> ${bookItem.author_name}</p>
+            <h4> ${bookItem.author_name}</h4>
             <p>Publish Year: ${bookItem.first_publish_year}</p></div>
         `
         results.appendChild(div);
