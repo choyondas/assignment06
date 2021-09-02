@@ -31,6 +31,7 @@ const toggleResult = displayStyle => {
 // display data
 const loadBook = data => {
 
+
     const itemsNumber = data.numFound;
     const number = document.getElementById('itemsNumber');
 
@@ -62,7 +63,8 @@ const loadBook = data => {
                     <img width="100px" src="https://covers.openlibrary.org/b/id/${bookItem.cover_i}-L.jpg" class="card-img-top" alt="..."></div>
                 <div class="card-body">
                      <h4 class="card-title">${bookItem.title}</h4>
-                     <h6 class="card-title">${bookItem.author_name}</h6>
+                     <h6 class="card-title">author_name: ${bookItem.author_name}</h6>
+                     <h6 class="card-title">publisher: ${bookItem.publisher}</h6>
                     <p class="card-text">Publish Year: ${bookItem.first_publish_year}</p>
                 </div>
               </div>
