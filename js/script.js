@@ -5,9 +5,7 @@ const searchBook = () => {
     const searchResults = searchField.value;
     // display spinner
     spinner('block');
-    toggleResult('none');
-    toggleNum('none');
-    emptyResult('none');
+
 
 
 
@@ -27,12 +25,7 @@ const spinner = displayStyle => {
 const toggleResult = displayStyle => {
     document.getElementById('searchResults').style.display = displayStyle;
 }
-const toggleNum = displayStyle => {
-    document.getElementById('itemsNumber').style.display = displayStyle;
-}
-const emptyResult = displayStyle => {
-    document.getElementById('results').style.display = displayStyle;
-}
+
 
 
 // display data
@@ -60,21 +53,25 @@ const loadBook = data => {
     // loop through to get each element 
     items.forEach(bookItem => {
         const div = document.createElement('div');
-        div.classList.add('design');
+        div.classList.add('col');
 
         div.innerHTML =
             `
-            <div><img width="100px" src="https://covers.openlibrary.org/b/id/${bookItem.cover_i}-L.jpg"></div>
-            <div><h2>${bookItem.title} </h2>
-            <h4> ${bookItem.author_name}</h4>
-            <p>Publish Year: ${bookItem.first_publish_year}</p></div>
+            <div  class="card h-100 d-flex flex-row align-items-center">
+                <div>
+                    <img width="100px" src="https://covers.openlibrary.org/b/id/${bookItem.cover_i}-L.jpg" class="card-img-top" alt="..."></div>
+                <div class="card-body">
+                     <h4 class="card-title">${bookItem.title}</h4>
+                     <h6 class="card-title">${bookItem.author_name}</h6>
+                    <p class="card-text">Publish Year: ${bookItem.first_publish_year}</p>
+                </div>
+              </div>
+
+
         `
         results.appendChild(div);
 
     })
     spinner('none');
-    toggleResult('block');
-    toggleNum('block');
-    emptyResult('block');
 
 }
